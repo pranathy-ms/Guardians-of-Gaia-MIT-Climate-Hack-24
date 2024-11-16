@@ -14,36 +14,6 @@ const data = {
           imgSrc: '/assets/img/demo/home-1.jpg',
           label: 'Nature',
         },
-        {
-          link: '/animal',
-          imgSrc: '/assets/img/demo/home-2.jpg',
-          label: 'Animal',
-        },
-        {
-          link: '/recycling',
-          imgSrc: '/assets/img/demo/home-3.jpg',
-          label: 'Recycling',
-        },
-        {
-          link: '/agriculture',
-          imgSrc: '/assets/img/demo/home-4.jpg',
-          label: 'Agriculture',
-        },
-        {
-          link: '/ocean-life',
-          imgSrc: '/assets/img/demo/home-5.jpg',
-          label: 'Ocean Life',
-        },
-        {
-          link: '/charity',
-          imgSrc: '/assets/img/demo/home-6.jpg',
-          label: 'Charity',
-        },
-        {
-          link: '/climate-change',
-          imgSrc: '/assets/img/demo/home-7.jpg',
-          label: 'Climate Change',
-        },
       ],
     },
     {
@@ -140,7 +110,7 @@ const Header = ({ isHamburger, variant, logo, bottomBorder }) => {
             <div className="cs_main_header_in">
               <div className="cs_main_header_left">
                 <Link className="cs_site_branding" to={data.link}>
-                  B2B
+                  <strong>B2B</strong>
                 </Link>
               </div>
               <div
