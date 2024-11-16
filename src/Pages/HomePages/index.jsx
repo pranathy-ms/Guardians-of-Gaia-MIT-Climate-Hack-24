@@ -15,7 +15,7 @@ const heroData = {
 };
 
 export default function Nature() {
-  pageTitle('Nature');
+  pageTitle('UrbanGrove');
 
   // Form state
   const [formData, setFormData] = useState({
