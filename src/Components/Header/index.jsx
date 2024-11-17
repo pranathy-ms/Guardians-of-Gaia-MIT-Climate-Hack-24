@@ -21,19 +21,6 @@ const data = {
       link: '/about',
     },
     {
-      label: 'Pages',
-      link: '#',
-      submenu: [
-        { link: '/services', label: 'Services' },
-        { link: '/services/service-details', label: 'Service Details' },
-        { link: '/team', label: 'Team' },
-        { link: '/event/event-details', label: 'Event Details' },
-        { link: '/project/project-details', label: 'Project Details' },
-        { link: '/gallery', label: 'Gallery' },
-        { link: '/error', label: '404 Error' },
-      ],
-    },
-    {
       label: 'Contact',
       link: '/contact',
     },

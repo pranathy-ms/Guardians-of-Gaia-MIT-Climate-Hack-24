@@ -3,16 +3,16 @@ from app.services import geocode_address, get_emissions_data
 
 bp = Blueprint('main', __name__)
 
-@bp.route('/process', methods=['GET'])
+@bp.route('/process', methods=['POST'])
 def process_data():
+    print("Received a POST request on /process")
     data = request.json
+    print("Request data:", data)
     address = data.get('address')
     from_date = data.get('fromDate')
     to_date = data.get('toDate')
 
     lat, lon = geocode_address(address, current_app.config['SECRET_KEY_MAPBOX'])
-    print("LAT,LON")
-    print(lat,lon)
     if not lat or not lon:
         return jsonify({'error': 'Geocoding failed'}), 400
 
@@ -20,4 +20,5 @@ def process_data():
     if not emissions_data:
         return jsonify({'error': 'Failed to retrieve emissions data'}), 400
 
+    print("Emissions Data:", emissions_data)  # For debugging
     return jsonify(emissions_data)

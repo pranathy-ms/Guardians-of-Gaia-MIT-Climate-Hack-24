@@ -15,6 +15,7 @@ import 'aos/dist/aos.css';
 import Aos from 'aos';
 import Error404 from './Pages/ErrorPage';
 import { useEffect } from 'react';
+
 function App() {
   const { pathname } = useLocation();
   Aos.init({

@@ -1,15 +1,14 @@
 import requests
 
 def test_flask_api():
-    API_URL = 'http://localhost:5000/process'
+    API_URL = 'http://localhost:5000/api/process'
     payload = {
         'address': '1600 Amphitheatre Parkway, Mountain View, CA',
         'fromDate': '2023-01-01',
         'toDate': '2023-12-31'
     }
     try:
-        response = requests.get(API_URL, json=payload)
-        print(response)
+        response = requests.post(API_URL, json=payload)
         handle_response(response)
     except Exception as e:
         print('Error occurred:', str(e))
