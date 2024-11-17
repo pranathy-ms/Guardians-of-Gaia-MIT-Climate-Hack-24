@@ -1,16 +1,22 @@
 import requests
+import urllib.parse
 
 
 def geocode_address(address, api_key):
+    encoded_address = urllib.parse.quote(address)
+    print(encoded_address)
     # https://api.mapbox.com/search/geocode/v6/forward?q={search_text}
-    url = f"https://api.mapbox.com/search/geocode/v6/forward?q={
-        address}&access_token={api_key}"
+    url = f"https://api.mapbox.com/search/geocode/v6/forward?q={encoded_address}&access_token={api_key}"
+    print(f"Requesting URL: {url}")  # For debugging
     response = requests.get(url)
+    print("HEREEEEE")
+    print(response)
     if response.status_code == 200:
         data = response.json()
         if data['features']:
             # Mapbox returns coordinates as [longitude, latitude]
             coordinates = data['features'][0]['center']
+            print(coordinates)
             return coordinates[1], coordinates[0]  # Return as lat, lon
     return None, None
 
